@@ -1619,40 +1619,40 @@
                         addMessage(reply, 'received');
                     }, 1000);
                 }
-            }
+            }}
             
-            // 添加消息到聊天窗口
-            function addMessage(text, type) {
-                const now = new Date();
-                const timeString = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+            // 将消息添加到聊天窗口// 添加消息到聊天窗口
+            函数 addMessage(文本, 类型) {function addMessage(text, type) {
+                const now = new Date();const now = new Date();
+                const timeString = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;const timeString = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
                 
-                const messageElement = document.createElement('div');
-                messageElement.classList.add('message', type);
-                messageElement.innerHTML = `
+                const messageElement = document.createElement('div');const messageElement = document.createElement('div');
+                messageElement.classList.add('message', type);messageElement.classList.add('message', type);
+                messageElement.innerHTML = `messageElement.innerHTML = `
                     <div class="message-text">${text}</div>
                     <div class="message-time">${timeString}</div>
-                `;
+                `                输入的文本为空，没有可显示的内容。
                 
-                chatBody.appendChild(messageElement);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
+                chatBody.appendChild(messageElement);chatBody.appendChild(messageElement);
+                chatBody.scrollTop = chatBody.scrollHeight;chatBody.scrollTop = chatBody.scrollHeight;
+            }}
             
-            // 发送按钮点击事件
-            sendButton.addEventListener('click', sendMessage);
+            // 发送按钮点击事件// 发送按钮点击事件
+            sendButton.addEventListener('click', sendMessage);sendButton.addEventListener('click', sendMessage);
             
             // 回车键发送消息
             messageInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
-                    sendMessage();
+                    发送消息();
                 }
             });
             
             // 快捷回复按钮
-            quickReplies.forEach(button => {
-                button.addEventListener('click', function() {
+            快速回复.forEach按钮 => {
+                按钮.addEventListener('点击', function() {
                     const question = this.getAttribute('data-question');
                     messageInput.value = question;
-                    sendMessage();
+                    发送消息();
                 });
             });
             
@@ -1663,7 +1663,7 @@
                 
                 // 模拟转接过程
                 setTimeout(() => {
-                    addMessage('客服专员正在为您服务，请稍候...', 'received');
+                    addMessage('客服专员正在为您服务，请稍候...', '收到');
                     
                     // 打开QQ客服链接
                     setTimeout(() => {
@@ -1674,4 +1674,3 @@
         });
     </script>
 </body>
-</html>
