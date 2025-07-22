@@ -1,0 +1,1567 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深圳市腾跃信电子有限公司 - 专业电子回收解决方案</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #4169E1; /* 皇家蓝 */
+            --secondary: #6495ED; /* 浅蓝色 */
+            --accent: #FFD700; /* 金色 */
+            --light: #F5F5F5; /* 浅灰色 */
+            --dark: #333; /* 深灰色 */
+            --gray: #8D99AE; /* 中灰色 */
+            --success: #4CAF50; /* 绿色 */
+        }
+        
+        body {
+            background-color: #f9fbfa;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+        /* 导航栏 */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            color: var(--primary);
+            font-size: 36px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 28px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(65, 105, 225, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: #2a52be;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(65, 105, 225, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+        
+        /* 英雄区 */
+        .hero {
+            background: linear-gradient(135deg, rgba(65, 105, 225, 0.9) 0%, rgba(100, 149, 237, 0.9) 100%), url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+        
+        /* 公司简介 */
+        .about-section {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeInRight 1s ease;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        /* 核心业务 */
+        .services-section {
+            background-color: #f0f7f4;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--primary);
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* 特点和优势 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* 回收流程 */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            counter-reset: step;
+        }
+        
+        .process-step {
+            width: 23%;
+            min-width: 200px;
+            position: relative;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .process-step:before {
+            counter-increment: step;
+            content: counter(step);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--dark);
+        }
+        
+        .process-step h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* 统计区 */
+        .stats {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .stat-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-box {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        /* CTA区 */
+        .cta {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 15px;
+            padding: 60px;
+            color: white;
+            text-align: center;
+            margin: 80px 0;
+            box-shadow: 0 10px 30px rgba(65, 105, 225, 0.3);
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+        
+        /* 团队介绍 */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+        
+        .member-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .member-info h3 {
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .member-info p {
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        /* 联系方式 */
+        .contact-section {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+            color: var(--accent);
+        }
+        
+        .contact-details h3 {
+            margin-bottom: 5px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(65, 105, 225, 0.2);
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .submit-btn:hover {
+            background-color: #2a52be;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3);
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* 在线客服样式 */
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-button {
+            background-color: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .chat-button:hover {
+            transform: scale(1.1);
+            background-color: #2a52be;
+        }
+        
+        .chat-button i {
+            font-size: 24px;
+        }
+        
+        .chat-window {
+            width: 350px;
+            height: 450px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: translateY(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-window.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .chat-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .chat-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .chat-status {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--success);
+            margin-right: 8px;
+        }
+        
+        .chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .chat-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message.received {
+            background-color: #f0f2f5;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .message.sent {
+            background-color: var(--primary);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .message-time {
+            font-size: 11px;
+            margin-top: 5px;
+            opacity: 0.7;
+            text-align: right;
+        }
+        
+        .chat-footer {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .quick-reply {
+            background-color: #f0f2f5;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quick-reply:hover {
+            background-color: #e4e6e9;
+        }
+        
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .chat-input input:focus {
+            border-color: var(--primary);
+        }
+        
+        .send-button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .send-button:hover {
+            background-color: #2a52be;
+            transform: scale(1.05);
+        }
+        
+        .send-button i {
+            font-size: 18px;
+        }
+        
+        .human-support-btn {
+            background-color: #283ba7;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .human-support-btn:hover {
+            background-color: #372188;
+            transform: translateY(-2px);
+        }
+        
+        .human-support-btn i {
+            font-size: 16px;
+        }
+        
+        /* 动画 */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .logo h1 {
+                font-size: 24px;
+            }
+            
+            .logo i {
+                font-size: 32px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .process-step {
+                width: 48%;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            .logo h1 {
+                font-size: 22px;
+            }
+            
+            .logo i {
+                font-size: 28px;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 10px 15px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .process-step {
+                width: 100%;
+            }
+            
+            .cta {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 20px;
+            }
+            
+            .logo i {
+                font-size: 24px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <i class="fas fa-globe"></i>
+                    <h1>深圳市腾跃信电子有限公司</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#services">核心业务</a></li>
+                    <li><a href="#features">我们的优势</a></li>
+                    <li><a href="#process">回收流程</a></li>
+                    <li><a href="#team">团队介绍</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+                <a href="#contact" class="btn">立即咨询</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 英雄区 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>创新科技，引领电子回收未来</h1>
+                <p>我们提供安全、环保、合规的电子回收解决方案，让您的废弃电子设备得到科学处理，减少环境污染，保护地球家园</p>
+                <div class="hero-btns">
+                    <a href="#process" class="btn">了解回收流程</a>
+                    <a href="#contact" class="btn btn-outline">立即咨询</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 公司简介 -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>关于我们</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>深圳市腾跃信电子有限公司</h3>
+                    <p>成立于2010年，是一家专注于电子废弃物回收、处理和资源再利用的高新技术企业。公司总部位于深圳市福田区，拥有2000平方米的现代化处理中心和一支专业的技术团队。</p>
+                    <p>我们秉承"绿色回收，循环再生"的理念，致力于减少电子废弃物对环境的污染，推动资源的循环利用。公司已通过ISO14001环境管理体系认证和ISO9001质量管理体系认证，并持有电子废弃物处理资质。</p>
+                    <p>多年来，我们为超过5000家企业提供专业的电子回收服务，累计处理电子废弃物超过10万吨，材料回收率达到98%以上，为环境保护和资源节约做出了积极贡献。</p>
+                    <p>未来，我们将继续加大技术研发投入，提升处理能力，扩大服务范围，努力成为电子回收行业的标杆企业。</p>
+                    <a href="#contact" class="btn">联系我们</a>
+                </div>
+                <div class="about-image">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 核心业务 -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>核心业务</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>电脑设备回收</h3>
+                    <p>专业回收各类台式电脑、笔记本电脑、服务器等IT设备，提供数据安全销毁服务。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>手机平板回收</h3>
+                    <p>回收各类智能手机、平板电脑及配件，提供专业检测和评估服务。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3>办公设备回收</h3>
+                    <p>回收打印机、复印机、扫描仪等办公设备，提供上门拆卸服务。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <h3>电池回收</h3>
+                    <p>专业回收各类锂电池、铅酸电池等，确保安全环保处理。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>数据中心设备回收</h3>
+                    <p>回收服务器、存储设备、网络设备等数据中心设备。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>环保处理服务</h3>
+                    <p>提供电子废弃物环保拆解、分类处理、资源再利用服务。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 特点和优势 -->
+    <section id="features" class="section" style="background-color: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>我们的优势</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>安全可靠</h3>
+                    <p>我们采用最高安全标准处理数据，确保您的隐私信息安全无虞。所有设备均经过专业的数据擦除或物理销毁。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>环保处理</h3>
+                    <p>符合国际环保标准，确保98%的材料得到回收利用，有毒物质安全处理，最大程度减少环境影响。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>认证齐全</h3>
+                    <p>持有R2、e-Stewards等行业权威认证，所有流程均可追溯，处理过程透明可信。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>便捷服务</h3>
+                    <p>全国100+城市免费上门回收，在线预约系统简单快捷，专业团队一站式服务。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 回收流程 -->
+    <section id="process" class="section" style="background-color: #f0f7f4;">
+        <div class="container">
+            <div class="section-title">
+                <h2>回收流程</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <h3>预约回收</h3>
+                    <p>在线或电话提交回收请求，选择回收物品类型和数量</p>
+                </div>
+                <div class="process-step">
+                    <h3>上门收取</h3>
+                    <p>专业人员上门收取，提供包装和搬运服务</p>
+                </div>
+                <div class="process-step">
+                    <h3>安全处理</h3>
+                    <p>专业设备进行数据销毁，确保信息安全</p>
+                </div>
+                <div class="process-step">
+                    <h3>环保回收</h3>
+                    <p>分类拆解和资源再利用，废弃物合规处理</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 回收数据 -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-container">
+                <div class="stat-box">
+                    <div class="stat-number">10,000+</div>
+                    <p>吨电子废弃物处理</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">98%</div>
+                    <p>材料回收率</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">5,000+</div>
+                    <p>合作企业</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">120</div>
+                    <p>服务城市</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA区 -->
+    <div class="container">
+        <div class="cta">
+            <h2>立即开始环保回收之旅</h2>
+            <p>加入我们，成为绿色地球的守护者。每一次回收都是在为地球减负，为未来造福。</p>
+            <a href="#contact" class="btn" style="background: white; color: var(--primary);">预约上门回收</a>
+        </div>
+    </div>
+    
+    <!-- 团队介绍 -->
+    <section id="team" class="section" style="background-color: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>团队介绍</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        
+                    </div>
+                    <div class="member-info">
+                        <h3>张明</h3>
+                        <p>技术总监</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        
+                    </div>
+                    <div class="member-info">
+                        <h3>李华</h3>
+                        <p>运营经理</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        
+                    </div>
+                    <div class="member-info">
+                        <h3>王静</h3>
+                        <p>环保专家</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        
+                    </div>
+                    <div class="member-info">
+                        <h3>陈强</h3>
+                        <p>客户经理</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 联系方式 -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">联系我们</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>公司地址</h3>
+                            <p>深圳市福田区华强佳和大厦3C007</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>联系电话</h3>
+                            <p>400-888-9999</p>
+                            <p>0755-8304-7312</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>电子邮箱</h3>
+                            <p>info@tyxd.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>工作时间</h3>
+                            <p>周一至周五: 9:00 - 18:00</p>
+                            <p>周六: 10:00 - 16:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>发送消息</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">电话</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-globe"></i>
+                        <h3>深圳市腾跃信电子有限公司</h3>
+                    </div>
+                    <p>我们致力于提供最安全环保的电子废弃物回收解决方案，共建可持续未来。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#services">核心业务</a></li>
+                        <li><a href="#process">回收流程</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>服务项目</h3>
+                    <ul>
+                        <li><a href="#">电脑回收</a></li>
+                        <li><a href="#">手机回收</a></li>
+                        <li><a href="#">服务器回收</a></li>
+                        <li><a href="#">办公设备回收</a></li>
+                        <li><a href="#">电池回收</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>订阅资讯</h3>
+                    <p>订阅我们的电子报，获取最新行业资讯和公司动态</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="输入您的邮箱" required>
+                        </div>
+                        <button type="submit" class="submit-btn">订阅</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 深圳市腾跃信电子有限公司. 保留所有权利. | 粤ICP备xxxxx号</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 在线客服系统 -->
+    <div class="chat-container">
+        <div class="chat-button" id="chatButton">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>在线客服</h3>
+                <div class="chat-status">
+                    <span class="status-indicator"></span>
+                    <span>在线</span>
+                </div>
+                <button class="chat-close" id="chatClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="message received">
+                    <div class="message-text">您好！欢迎咨询深圳市腾跃信电子回收服务。请问有什么可以帮您？</div>
+                    <div class="message-time">10:00</div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <div class="quick-replies">
+                    <button class="quick-reply" data-question="回收流程是怎样的？">回收流程是怎样的？</button>
+                    <button class="quick-reply" data-question="如何预约上门回收？">如何预约上门回收？</button>
+                    <button class="quick-reply" data-question="回收价格如何计算？">回收价格如何计算？</button>
+                    <button class="quick-reply" data-question="数据安全如何保障？">数据安全如何保障？</button>
+                </div>
+                
+                <button class="human-support-btn" id="humanSupportBtn">
+                    <i class="fab fa-qq"></i> 联系人工客服
+                </button>
+                
+                <div class="chat-input">
+                    <input type="text" id="messageInput" placeholder="输入您的问题...">
+                    <button class="send-button" id="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 表单提交
+        const contactForm = document.querySelector('.contact-form form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('感谢您的留言！我们会尽快与您联系。');
+                this.reset();
+            });
+        }
+        
+        // 订阅表单
+        const subscribeForm = document.querySelector('.footer-column form');
+        if (subscribeForm) {
+            subscribeForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                if (email) {
+                    alert(`感谢订阅！我们将向 ${email} 发送最新资讯。`);
+                    this.reset();
+                }
+            });
+        }
+        
+        // 动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            const animatedElements = document.querySelectorAll('.service-card, .feature-card, .team-member, .process-step');
+            animatedElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s, transform 0.8s';
+                observer.observe(el);
+            });
+            
+            // 在线客服功能
+            const chatButton = document.getElementById('chatButton');
+            const chatWindow = document.getElementById('chatWindow');
+            const chatClose = document.getElementById('chatClose');
+            const chatBody = document.getElementById('chatBody');
+            const messageInput = document.getElementById('messageInput');
+            const sendButton = document.getElementById('sendButton');
+            const quickReplies = document.querySelectorAll('.quick-reply');
+            const humanSupportBtn = document.getElementById('humanSupportBtn');
+            
+            // 打开聊天窗口
+            chatButton.addEventListener('click', function() {
+                chatWindow.classList.add('active');
+            });
+            
+            // 关闭聊天窗口
+            chatClose.addEventListener('click', function() {
+                chatWindow.classList.remove('active');
+            });
+            
+            // 发送消息
+            function sendMessage() {
+                const message = messageInput.value.trim();
+                if (message) {
+                    addMessage(message, 'sent');
+                    messageInput.value = '';
+                    
+                    // 模拟客服回复
+                    setTimeout(() => {
+                        let reply = '';
+                        if (message.includes('价格') || message.includes('费用')) {
+                            reply = '回收价格根据设备类型、品牌、配置和市场行情综合评估。您可以通过我们的在线估价系统获取初步估价，或提供设备信息由客服为您评估。';
+                        } else if (message.includes('流程') || message.includes('步骤')) {
+                            reply = '我们的回收流程包括：1. 在线或电话预约 2. 专业人员上门收取 3. 数据安全处理 4. 环保拆解回收。整个过程通常需要1-3个工作日完成。';
+                        } else if (message.includes('数据') || message.includes('安全')) {
+                            reply = '我们提供专业的数据清除服务：1. 使用专业软件彻底擦除数据 2. 物理销毁硬盘选项 3. 提供数据清除证明。所有操作均在您的监督下完成。';
+                        } else if (message.includes('预约') || message.includes('上门')) {
+                            reply = '您可以通过以下方式预约：1. 网站"安排回收"按钮 2. 拨打客服电话400-888-9999 3. 发送邮件至info@tyxd.com。我们会根据您的位置安排最近的服务点上门。';
+                        } else {
+                            reply = '感谢您的咨询！我们的客服专员会尽快回复您的问题。同时，您也可以查看网站"常见问题"栏目获取更多信息。';
+                        }
+                        
+                        addMessage(reply, 'received');
+                    }, 1000);
+                }
+            }
+            
+            // 添加消息到聊天窗口
+            function addMessage(text, type) {
+                const now = new Date();
+                const timeString = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+                
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message', type);
+                messageElement.innerHTML = `
+                    <div class="message-text">${text}</div>
+                    <div class="message-time">${timeString}</div>
+                `;
+                
+                chatBody.appendChild(messageElement);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+            
+            // 发送按钮点击事件
+            sendButton.addEventListener('click', sendMessage);
+            
+            // 回车键发送消息
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // 快捷回复按钮
+            quickReplies.forEach(button => {
+                button.addEventListener('click', function() {
+                    const question = this.getAttribute('data-question');
+                    messageInput.value = question;
+                    sendMessage();
+                });
+            });
+            
+            // 添加人工客服按钮事件
+            humanSupportBtn.addEventListener('click', function() {
+                // 添加提示消息
+                addMessage('正在为您转接人工客服...', 'received');
+                
+                // 模拟转接过程
+                setTimeout(() => {
+                    addMessage('客服专员正在为您服务，请稍候...', 'received');
+                    
+                    // 打开QQ客服链接
+                    setTimeout(() => {
+                        window.open('http://wpa.qq.com/msgrd?v=3&uin=3003794414&exe=qq&menu=no', '_blank');
+                    }, 2000);
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
